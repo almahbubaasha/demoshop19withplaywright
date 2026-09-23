@@ -1,5 +1,10 @@
-class Register{
+// import { expect } from "@playwright/test";
+import { BasePage } from "./BasePage";
+
+
+class Register extends BasePage{
     constructor(page){
+        super(page);
         this.page = page;
 
     //locators
@@ -13,10 +18,11 @@ class Register{
     this.rButton = page.locator('#register-button');
     }
 
-    //page open
-    async pageOpen(url){
-        await this.page.goto(url);
-    }
+    // //page open
+    // async pageOpen(url){
+    //     await this.page.goto(url);
+    // }
+    
     //registerlink
     async clickRegisterLink(){
         await this.registerLink.click();
